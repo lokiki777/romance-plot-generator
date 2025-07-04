@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Romance Plot Generator 💋</title>
@@ -8,66 +9,107 @@
       padding: 40px;
       background-color: #fff0f5;
       color: #333;
-    }h1 {
-  color: #d81b60;
-  text-align: center;
-}
+    }
 
-label {
-  font-weight: bold;
-  display: block;
-  margin-top: 15px;
-}
+    h1 {
+      color: #d81b60;
+      text-align: center;
+    }
 
-select, input, button {
-  padding: 10px;
-  margin-top: 5px;
-  width: 100%;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
 
-#plot {
-  margin-top: 30px;
-  padding: 20px;
-  background: #fff;
-  border-left: 4px solid #d81b60;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    select, input, button {
+      padding: 10px;
+      margin-top: 5px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
 
-button {
-  background-color: #d81b60;
-  color: white;
-  cursor: pointer;
-  margin-top: 15px;
-}
+    #plot {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border-left: 4px solid #d81b60;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-button:hover {
-  background-color: #b7134d;
-}
+    button {
+      background-color: #d81b60;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+    }
 
+    button:hover {
+      background-color: #b7134d;
+    }
   </style>
 </head>
-<body>  <h1>💖 Romance Plot Generator</h1><label for="heroine">Heroine Name:</label> <input id="heroine" type="text" placeholder="e.g., Lena">
+<body>
 
-<label for="hero">Hero Name:</label> <input id="hero" type="text" placeholder="e.g., Alaric">
+  <h1>💖 Romance Plot Generator</h1>
 
-<label for="genre">Genre:</label> <select id="genre"> <option value="mafia">🔫 Mafia</option> <option value="werewolf">🐺 Werewolf</option> <option value="billionaire">💰 Billionaire</option> <option value="alpha">🧫 Alpha/Omega</option> </select>
+  <label for="heroine">Heroine Name:</label>
+  <input id="heroine" type="text" placeholder="e.g., Lena">
 
-<label for="spice">Spice Level:</label> <select id="spice"> <option value="innocent">💐 Innocent</option> <option value="spicy">🌶️ Spicy</option> <option value="dark">🖤 Dark</option> </select>
+  <label for="hero">Hero Name:</label>
+  <input id="hero" type="text" placeholder="e.g., Alaric">
 
-<label for="setting">Setting:</label> <select id="setting"> <option value="urban">🌆 Urban</option> <option value="fantasy">🐉 Fantasy</option> <option value="historical">🏰 Historical</option> </select>
+  <label for="genre">Genre:</label>
+  <select id="genre">
+    <option value="mafia">🔫 Mafia</option>
+    <option value="werewolf">🐺 Werewolf</option>
+    <option value="billionaire">💰 Billionaire</option>
+    <option value="alpha">🧬 Alpha/Omega</option>
+  </select>
 
-<label for="tropes">Select up to 5 Tropes:</label> <select id="tropes" multiple size="6"> <option value="Enemies to Lovers">Enemies to Lovers</option> <option value="Forced Proximity">Forced Proximity</option> <option value="Forbidden Love">Forbidden Love</option> <option value="Fake Relationship">Fake Relationship</option> <option value="Secret Identity">Secret Identity</option> <option value="Second Chance">Second Chance</option> <option value="Arranged Marriage">Arranged Marriage</option> <option value="Fated Mates">Fated Mates</option> </select>
+  <label for="spice">Spice Level:</label>
+  <select id="spice">
+    <option value="innocent">💐 Innocent</option>
+    <option value="spicy">🌶️ Spicy</option>
+    <option value="dark">🖤 Dark</option>
+  </select>
 
-<button onclick="generatePlot()">💘 Generate Plot</button> <button onclick="remixPlot()">🔁 Remix</button> <button onclick="randomizeAll()">🎲 Mix It Up</button>
+  <label for="setting">Setting:</label>
+  <select id="setting">
+    <option value="urban">🌆 Urban</option>
+    <option value="fantasy">🐉 Fantasy</option>
+    <option value="historical">🏰 Historical</option>
+  </select>
 
-  <div id="plot"></div>  <script>
+  <label for="tropes">Select up to 5 Tropes:</label>
+  <select id="tropes" multiple size="6">
+    <option value="Enemies to Lovers">Enemies to Lovers</option>
+    <option value="Forced Proximity">Forced Proximity</option>
+    <option value="Forbidden Love">Forbidden Love</option>
+    <option value="Fake Relationship">Fake Relationship</option>
+    <option value="Secret Identity">Secret Identity</option>
+    <option value="Second Chance">Second Chance</option>
+    <option value="Arranged Marriage">Arranged Marriage</option>
+    <option value="Fated Mates">Fated Mates</option>
+  </select>
+
+  <button onclick="generatePlot()">💘 Generate Plot</button>
+  <button onclick="remixPlot()">🔁 Remix</button>
+  <button onclick="randomizeAll()">🎲 Mix It Up</button>
+
+  <div id="plot"></div>
+
+  <script>
     const triggers = [
-      "'You're mine now.'", "'Kneel.'", "his touch burned like sin",
-      "a kiss that ruined her", "'I warned you.'", "his scent drove her crazy"
+      "'You're mine now.'",
+      "'Kneel.'",
+      "his touch burned like sin",
+      "a kiss that ruined her",
+      "'I warned you.'",
+      "his scent drove her crazy"
     ];
 
     const plotTemplates = [
@@ -77,26 +119,29 @@ button:hover {
       "{hero} had secrets, and {heroine} had scars. They met under {tropes}, and destiny whispered one thing: {trigger}"
     ];
 
-    const moreTemplates = [
+    // Add more random templates dynamically
+    for (let i = 0; i < 20; i++) {
+      plotTemplates.push(
+        `In the world of {genre}, {heroine} stumbled into {hero}'s trap. With {tropes} twisting their fate, she heard him say, {trigger}`,
+        `{hero} ruled {setting} with an iron will. Until {heroine} showed up with fire in her eyes and {tropes} in her path.`,
+        `Under the moonlight of {setting}, {hero} whispered {trigger} and changed everything between him and {heroine}.`,
+        `{heroine} didn't believe in {genre} love. But when {hero} crashed into her life, every {spice} boundary shattered.`,
+        `{hero} saved her once. Now {heroine} owes him everything—including her heart. But {tropes} never makes it easy.`
+      );
+    }
+
+    plotTemplates.push(
       "{heroine} was the only weakness {hero} had. But with {tropes} standing in their way, he had to choose between love and survival.",
       "In {setting}, {heroine} wore the crown. But {hero}, her sworn enemy, held the key to her undoing—and her desire.",
       "{heroine} was undercover. {hero} was untouchable. And {trigger} was the code phrase that broke every wall between them.",
-      "The engagement was fake. The chemistry was real. And one {spice} night later, {heroine} couldn't pretend anymore.",
-      "{hero} walked in like sin and silk. {heroine} should’ve run. But {tropes} were always her favorite mistake.",
-      "{hero} promised to protect her. But when {tropes} returned, even he couldn't hold back the darkness—or the heat.",
-      "{heroine} escaped once. She won’t escape again. Not with {hero} whispering {trigger} in her ear each night.",
-      "They were rivals on paper, but in {setting}, the sparks burned too hot. Now {heroine} and {hero} must survive love and lies.",
-      "{heroine} thought {hero} was just a fantasy. Until he claimed her in {genre} style—bold, brutal, and breathtaking.",
-      "All she wanted was peace. But {hero} came with chaos, {trigger}, and kisses that tasted like war."
-    ];
-
-    plotTemplates.push(...moreTemplates);
+      "The engagement was fake. The chemistry was real. And one {spice} night later, {heroine} couldn't pretend anymore."
+    );
 
     let lastCombo = "";
 
     function generatePlot() {
-      const hero = document.getElementById('hero').value.trim() || "Alaric";
-      const heroine = document.getElementById('heroine').value.trim() || "Lena";
+      const hero = document.getElementById('hero').value || "Alaric";
+      const heroine = document.getElementById('heroine').value || "Lena";
       const genre = document.getElementById('genre').value;
       const spice = document.getElementById('spice').value;
       const setting = document.getElementById('setting').value;
@@ -136,26 +181,26 @@ button:hover {
       const genres = ["mafia", "werewolf", "billionaire", "alpha"];
       const spices = ["innocent", "spicy", "dark"];
       const settings = ["urban", "fantasy", "historical"];
+      const heros = ["Damon", "Xavier", "Kai", "Lucien"];
+      const heroines = ["Aria", "Lena", "Talia", "Nova"];
       const tropeOptions = Array.from(document.getElementById('tropes').options);
 
       document.getElementById('genre').value = genres[Math.floor(Math.random() * genres.length)];
       document.getElementById('spice').value = spices[Math.floor(Math.random() * spices.length)];
       document.getElementById('setting').value = settings[Math.floor(Math.random() * settings.length)];
-
-      const heros = ["Damon", "Xavier", "Kai", "Lucien"];
-      const heroines = ["Aria", "Lena", "Talia", "Nova"];
       document.getElementById('hero').value = heros[Math.floor(Math.random() * heros.length)];
       document.getElementById('heroine').value = heroines[Math.floor(Math.random() * heroines.length)];
 
       tropeOptions.forEach(option => option.selected = false);
-      const selectedIndices = new Set();
-      while (selectedIndices.size < 5) {
-        const idx = Math.floor(Math.random() * tropeOptions.length);
-        selectedIndices.add(idx);
+      const selected = new Set();
+      while (selected.size < 5) {
+        const randomOption = tropeOptions[Math.floor(Math.random() * tropeOptions.length)];
+        selected.add(randomOption);
       }
-      selectedIndices.forEach(i => tropeOptions[i].selected = true);
+      selected.forEach(option => option.selected = true);
 
       generatePlot();
     }
-  </script></body>
+  </script>
+</body>
 </html>
