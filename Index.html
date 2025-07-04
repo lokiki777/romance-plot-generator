@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Romance Plot Generator 💋</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    h1 {
+      color: #d81b60;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    label {
+      font-weight: bold;
+    }
+    #plot {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border-left: 4px solid #d81b60;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 Romance Plot Generator</h1>
+
+  <label for="genre">Genre:</label><br>
+  <select id="genre">
+    <option value="werewolf">🐺 Werewolf</option>
+    <option value="billionaire">💰 Billionaire</option>
+    <option value="mafia">🔫 Mafia</option>
+    <option value="alpha">🧬 Alpha/Omega</option>
+  </select><br>
+
+  <label for="spice">Spice Level:</label><br>
+  <select id="spice">
+    <option value="innocent">💐 Innocent</option>
+    <option value="spicy">🌶️ Spicy</option>
+    <option value="dark">🖤 Dark</option>
+  </select><br>
+
+  <label for="setting">Setting:</label><br>
+  <select id="setting">
+    <option value="urban">🌆 Urban</option>
+    <option value="fantasy">🐉 Fantasy</option>
+    <option value="historical">🏰 Historical</option>
+  </select><br>
+
+  <button onclick="generatePlot()">Generate Plot</button>
+
+  <div id="plot"></div>
+
+  <script>
+    const plotDatabase = {
+      "werewolf_spicy_fantasy": [
+        "In a forbidden forest, the Alpha prince claims her under the blood moon—but she's a rogue with her own secrets."
+      ],
+      "werewolf_innocent_urban": [
+        "She just moved into a quiet town. What she didn’t know: the mysterious boy next door leads the local wolf pack."
+      ],
+      "billionaire_dark_urban": [
+        "She signed a contract. No love, no rules. But her billionaire boss has a dungeon full of secrets—and a past that haunts him."
+      ],
+      "mafia_spicy_historical": [
+        "In 1920s Chicago, a lady pianist falls for the heir of the most ruthless mafia family—but their love could spark a war."
+      ],
+      "alpha_spicy_fantasy": [
+        "The Alpha king takes an Omega from enemy lands as a prize—but their bond defies every law of the realm."
+      ],
+      // Add more as needed...
+    };
+
+    function generatePlot() {
+      const genre = document.getElementById('genre').value;
+      const spice = document.getElementById('spice').value;
+      const setting = document.getElementById('setting').value;
+
+      const key = `${genre}_${spice}_${setting}`;
+      const plotList = plotDatabase[key];
+
+      if (plotList && plotList.length > 0) {
+        const randomIndex = Math.floor(Math.random() * plotList.length);
+        document.getElementById('plot').innerText = plotList[randomIndex];
+      } else {
+        document.getElementById('plot').innerText = "No plot found for this combo yet. Try a different selection or add more data.";
+      }
+    }
+  </script>
+
+</body>
+</html>
